@@ -18,3 +18,24 @@ A5: No. A pipe guarantees that the data is delivered in order, but it does not g
 Design Explanation
 For this program I used two separate OS processes like we were told to do. I used a Producer process and a Consumer process. It is set up so that the Producer generates the numbers 1 through 5 and sends each number to the Consumer using a pipe. A second pipe is used for synchronization. After the Consumer receives and prints a number, it sends an acknowledgment back to the Producer. The Producer waits for this acknowledgment then continues to the next number. For this program I used Python's multiprocessing library (using ai tools to help find and implement the correct one)  to create the two processes and multiprocessing.Pipe() for communication between them. After both processes finish, the main process waits for them using join().
 
+Compile / Run Instructions
+Requirements
+Python 3.x
+Running the Program
+Open a terminal in the folder containing OS_hw0.py.
+Run the following command:
+python OS_hw0.py
+
+The program should give you the following output:
+Producer: 1
+Consumer: 1
+Producer: 2
+Consumer: 2
+Producer: 3
+Consumer: 3
+Producer: 4
+Consumer: 4
+Producer: 5
+Consumer: 5
+
+The program terminates automatically after all five numbers have been produced and consumed.
